@@ -1,0 +1,19 @@
+{
+    "name": "everwindui",
+    "version": "1.0.0",
+    "description": "The Evergreen UI by Segment, built with TailwindCSS",
+    "main": "src/index",
+    "typings": "src/index",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "tailwindcss"
+    ],
+    "author": "Brent Arcane",
+    "license": "ISC",
+    "dependencies": {
+        "hex-rgb": "^4.2.0",
+        "tailwindcss": "^1.8.10"
+    }
+}
