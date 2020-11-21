@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="csrf-token" content="4Yc7JjIQkEOkM0nke8xrpowx8JqAsxHSLO7inY9u">
+
+    <title>Everwind UI</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="build/everwindui.css">
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.2.1/dist/alpine.js" defer></script>
+</head>
+
+<body class="font-sans antialiased">
+    <header class="relative z-10 flex items-center px-4 bg-white shadow h-14">
+    <div class="flex items-end">
+        <a href="#" class="flex items-center">
+            <svg class="block w-auto h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-labelledby="title">
+                <title>Everwind UI</title>
+                <g>
+                    <circle cx="16" cy="16" r="16" fill="#38a065" />
+                    <path d="M16,9q-4.6667,0-5.8333,4.6667,1.75-2.3334,4.0833-1.75a4.973,4.973,0,0,1,2.2241,1.5785A6.7339,6.7339,0,0,0,21.8333,16q4.6667,0,5.8334-4.6667-1.75,2.3334-4.0834,1.75a4.9722,4.9722,0,0,1-2.224-1.5785A6.7342,6.7342,0,0,0,16,9Zm-5.8333,7Q5.5,16,4.3333,20.6667q1.75-2.3334,4.0834-1.75a4.9722,4.9722,0,0,1,2.224,1.5785A6.7342,6.7342,0,0,0,16,23q4.6667,0,5.8333-4.6667-1.75,2.3334-4.0833,1.75a4.973,4.973,0,0,1-2.2241-1.5785A6.7339,6.7339,0,0,0,10.1667,16Z" fill="#fff" fill-rule="evenodd" />
+                </g>
+            </svg>
+            <span class="block ml-2 text-xs font-bold leading-none tracking-wider uppercase text-neutral-1000">Everwind UI</span>
+        </a>
+    </div>
+
+    <nav class="flex px-4 space-x-1">
+        <a href="#" class="flex items-center px-3 text-xs font-medium leading-none uppercase transition-colors duration-150 bg-transparent rounded-sm h-9 text-neutral-900 hover:bg-neutral-200">Get Started</a>
+        <a href="#" class="flex items-center px-3 text-xs font-medium leading-none uppercase transition-colors duration-150 bg-transparent rounded-sm h-9 text-neutral-900 hover:bg-neutral-200">Components</a>
+        <a href="#" class="flex items-center px-3 text-xs font-medium leading-none uppercase transition-colors duration-150 bg-transparent rounded-sm h-9 text-neutral-900 hover:bg-neutral-200">For Designers</a>
+        <a href="#" class="flex items-center px-3 text-xs font-medium leading-none uppercase transition-colors duration-150 bg-transparent rounded-sm h-9 text-neutral-900 hover:bg-neutral-200">What's New</a>
+    </nav>
+
+    <div class="flex items-center ml-auto">
+        <div @click.away="open = false" class="relative" x-data="{ open: true }">
+            <div>
+                <button @click="open = !open" class="flex items-center space-x-1" id="user-menu" aria-label="User menu" aria-haspopup="true" x-bind:aria-expanded="open">
+                    <div class="flex items-center justify-center w-8 h-8 text-sm transition duration-150 ease-in-out bg-green-400 border-2 border-transparent rounded-full focus:outline-none focus:border-white">
+                        <!--
+                        <img class="w-8 h-8 rounded-full" src="#" alt="Profile Image">
+                        -->
+                        <span class="text-xs font-medium leading-none uppercase text-green-1000">
+                            EW
+                        </span>
+                    </div>
+                    <svg viewBox="0 0 16 16" class="w-4 h-4 fill-current text-neutral-900">
+                        <path d="M12 6.5c0-.28-.22-.5-.5-.5h-7a.495.495 0 00-.37.83l3.5 4c.09.1.22.17.37.17s.28-.07.37-.17l3.5-4c.08-.09.13-.2.13-.33z" fill-rule="evenodd"></path>
+                    </svg>
+                </button>
+            </div>
+            <div x-show="open" x-description="Profile dropdown panel, show/hide based on dropdown state." x-transition:enter="transition ease-out duration-100" x-transition:enter-start="transform opacity-0 scale-95" x-transition:enter-end="transform opacity-100 scale-100" x-transition:leave="transition ease-in duration-75" x-transition:leave-start="transform opacity-100 scale-100" x-transition:leave-end="transform opacity-0 scale-95" class="absolute right-0 w-64 mt-2 origin-top-right bg-white rounded shadow-lg" x-cloak>
+                <div role="menu" aria-orientation="vertical" aria-labelledby="user-menu">
+                    <div class="py-4 text-center bg-neutral-100">
+                        <div class="flex items-center justify-center w-12 h-12 mx-auto bg-green-400 rounded-full">
+                            <span class="font-medium uppercase text-green-1000">EW</span>
+                        </div>
+                        <div class="mt-3 text-sm font-medium text-neutral-1000">
+                            Everwind UI
+                        </div>
+                        <div class="text-xs font-light text-neutral-1000">
+                            user@example.com
+                        </div>
+                    </div>
+                    <div class="py-2">
+                        <a href="#" class="block px-4 py-2 text-sm leading-5 transition duration-150 ease-in-out text-neutral-900 hover:bg-neutral-100 focus:outline-none focus:bg-gray-100" role="menuitem">Your Profile</a>
+                        <a href="#" class="block px-4 py-2 text-sm leading-5 transition duration-150 ease-in-out text-neutral-900 hover:bg-neutral-100 focus:outline-none focus:bg-gray-100" role="menuitem">Settings</a>
+                        <a href="#" class="block px-4 py-2 text-sm leading-5 transition duration-150 ease-in-out text-neutral-900 hover:bg-neutral-100 focus:outline-none focus:bg-gray-100" role="menuitem">Sign out</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>    <main>
+        <div class="py-8 bg-neutral-100">
+        <div class="max-w-5xl px-4 mx-auto">
+            <a href="#" class="relative inline-flex items-center h-8 px-3 text-xs font-medium leading-none no-underline align-middle bg-white border-none rounded-sm outline-none cursor-pointer text-neutral-900 shadow-inset bg-gradient-to-b from-white to-neutral-200 hover:from-neutral-200 hover:to-neutral-300 active:bg-blue-400 active:bg-opacity-25 active:bg-none">
+                Provide Feedback
+            </a>
+            <div class="flex items-center">
+                <a href="#" class="relative inline-flex items-center justify-center w-10 h-10 text-xs font-medium leading-none no-underline align-middle bg-white border-none rounded-sm outline-none cursor-pointer text-neutral-900 shadow-inset bg-gradient-to-b from-white to-neutral-200 hover:from-neutral-200 hover:to-neutral-300 active:bg-blue-400 active:bg-opacity-25 active:bg-none">
+                    <svg viewBox="0 0 16 16" class="w-4 h-4 fill-current text-neutral-800">
+                        <path d="M13.99 6.99H4.41L7.7 3.7a1.003 1.003 0 00-1.42-1.42l-5 5a1.014 1.014 0 000 1.42l5 5a1.003 1.003 0 001.42-1.42L4.41 8.99H14c.55 0 1-.45 1-1s-.46-1-1.01-1z" fill-rule="evenodd"></path>
+                    </svg>
+                </a>
+                <h1 class="ml-4 text-3xl font-semibold tracking-tight text-neutral-1000">Colors</h1>
+            </div>
+        </div>
+    </div>
+    <div class="max-w-4xl px-4 mx-auto">
+        <div class="py-10">
+
+            <div class="space-y-4">
+                <div>
+                    <h2 class="mb-4 text-3xl font-semibold tracking-tight text-neutral-1000">Introduction</h2>
+                    <p class="text-neutral-900">
+                        The color system for a product has many requirements and constraints. There is a need to be intentional and functional with color use. Although the Evergreen color system has a bit of overlap with the Segment brand. There are also many other colors not found in the Segment brand.
+                    </p>
+                </div>
+                <div>
+                    <h2 class="mb-4 text-3xl font-semibold tracking-tight text-neutral-1000">Implementation Details</h2>
+                    <p class="text-neutral-900">
+                        The color system in Evergreen is located in the theme and is used throughout the theme. There is no real dependency on any of the colors directly within components. Components always access a theme color or property through a get function. For example, theme.getTextColor is a required function in the Evergreen theme, theme.colors is not a required property.
+                    </p>
+                </div>
+                <div>
+                    <h2 class="mb-4 text-3xl font-semibold tracking-tight text-neutral-1000">Palette</h2>
+                </div>
+            </div>
+
+            <div class="space-y-10">
+                                <div>
+                    <h5 class="font-medium capitalize text-neutral-1000">neutral</h5>
+                    <hr class="mt-2 border-neutral-200">
+
+                    <!-- -->
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-neutral-100"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">neutral</span> 100
+                            </div>
+                            <div class="text-neutral-800">
+                                #F9F9FB
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">neutral-100</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-neutral-200"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">neutral</span> 200
+                            </div>
+                            <div class="text-neutral-800">
+                                #F5F6F7
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">neutral-200</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-neutral-300"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">neutral</span> 300
+                            </div>
+                            <div class="text-neutral-800">
+                                #EDF0F2
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">neutral-300</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-neutral-400"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">neutral</span> 400
+                            </div>
+                            <div class="text-neutral-800">
+                                #E4E7EB
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">neutral-400</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-neutral-500"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">neutral</span> 500
+                            </div>
+                            <div class="text-neutral-800">
+                                #C7CED4
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">neutral-500</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-neutral-600"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">neutral</span> 600
+                            </div>
+                            <div class="text-neutral-800">
+                                #A6B1BB
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">neutral-600</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-neutral-700"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">neutral</span> 700
+                            </div>
+                            <div class="text-neutral-800">
+                                #7B8B9A
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">neutral-700</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-neutral-800"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">neutral</span> 800
+                            </div>
+                            <div class="text-neutral-800">
+                                #66788A
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">neutral-800</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-neutral-900"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">neutral</span> 900
+                            </div>
+                            <div class="text-neutral-800">
+                                #425A70
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">neutral-900</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-neutral-1000"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">neutral</span> 1000
+                            </div>
+                            <div class="text-neutral-800">
+                                #234361
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">neutral-1000</code>
+                        </div>
+                    </div>
+                                        <!-- -->
+
+                </div>
+                                <div>
+                    <h5 class="font-medium capitalize text-neutral-1000">blue</h5>
+                    <hr class="mt-2 border-neutral-200">
+
+                    <!-- -->
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-blue-100"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">blue</span> 100
+                            </div>
+                            <div class="text-neutral-800">
+                                #F7F9FD
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">blue-100</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-blue-200"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">blue</span> 200
+                            </div>
+                            <div class="text-neutral-800">
+                                #F1F7FC
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">blue-200</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-blue-300"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">blue</span> 300
+                            </div>
+                            <div class="text-neutral-800">
+                                #E9F2FA
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">blue-300</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-blue-400"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">blue</span> 400
+                            </div>
+                            <div class="text-neutral-800">
+                                #DDEBF7
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">blue-400</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-blue-500"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">blue</span> 500
+                            </div>
+                            <div class="text-neutral-800">
+                                #B7D4EF
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">blue-500</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-blue-600"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">blue</span> 600
+                            </div>
+                            <div class="text-neutral-800">
+                                #8FBCE6
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">blue-600</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-blue-700"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">blue</span> 700
+                            </div>
+                            <div class="text-neutral-800">
+                                #579AD9
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">blue-700</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-blue-800"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">blue</span> 800
+                            </div>
+                            <div class="text-neutral-800">
+                                #3D8BD4
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">blue-800</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-blue-900"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">blue</span> 900
+                            </div>
+                            <div class="text-neutral-800">
+                                #1070CA
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">blue-900</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-blue-1000"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">blue</span> 1000
+                            </div>
+                            <div class="text-neutral-800">
+                                #084B8A
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">blue-1000</code>
+                        </div>
+                    </div>
+                                        <!-- -->
+
+                </div>
+                                <div>
+                    <h5 class="font-medium capitalize text-neutral-1000">red</h5>
+                    <hr class="mt-2 border-neutral-200">
+
+                    <!-- -->
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-red-100"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">red</span> 100
+                            </div>
+                            <div class="text-neutral-800">
+                                #FEF6F6
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">red-100</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-red-200"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">red</span> 200
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">red-200</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-red-300"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">red</span> 300
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">red-300</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-red-400"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">red</span> 400
+                            </div>
+                            <div class="text-neutral-800">
+                                #FAE2E2
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">red-400</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-red-500"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">red</span> 500
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">red-500</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-red-600"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">red</span> 600
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">red-600</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-red-700"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">red</span> 700
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">red-700</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-red-800"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">red</span> 800
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">red-800</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-red-900"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">red</span> 900
+                            </div>
+                            <div class="text-neutral-800">
+                                #EC4C47
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">red-900</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-red-1000"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">red</span> 1000
+                            </div>
+                            <div class="text-neutral-800">
+                                #BF0E08
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">red-1000</code>
+                        </div>
+                    </div>
+                                        <!-- -->
+
+                </div>
+                                <div>
+                    <h5 class="font-medium capitalize text-neutral-1000">orange</h5>
+                    <hr class="mt-2 border-neutral-200">
+
+                    <!-- -->
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-orange-100"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">orange</span> 100
+                            </div>
+                            <div class="text-neutral-800">
+                                #FDF8F3
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">orange-100</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-orange-200"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">orange</span> 200
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">orange-200</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-orange-300"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">orange</span> 300
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">orange-300</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-orange-400"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">orange</span> 400
+                            </div>
+                            <div class="text-neutral-800">
+                                #FAE3CD
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">orange-400</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-orange-500"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">orange</span> 500
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">orange-500</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-orange-600"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">orange</span> 600
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">orange-600</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-orange-700"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">orange</span> 700
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">orange-700</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-orange-800"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">orange</span> 800
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">orange-800</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-orange-900"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">orange</span> 900
+                            </div>
+                            <div class="text-neutral-800">
+                                #D9822B
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">orange-900</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-orange-1000"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">orange</span> 1000
+                            </div>
+                            <div class="text-neutral-800">
+                                #95591E
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">orange-1000</code>
+                        </div>
+                    </div>
+                                        <!-- -->
+
+                </div>
+                                <div>
+                    <h5 class="font-medium capitalize text-neutral-1000">yellow</h5>
+                    <hr class="mt-2 border-neutral-200">
+
+                    <!-- -->
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-yellow-100"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">yellow</span> 100
+                            </div>
+                            <div class="text-neutral-800">
+                                #FEF8E7
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">yellow-100</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-yellow-200"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">yellow</span> 200
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">yellow-200</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-yellow-300"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">yellow</span> 300
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">yellow-300</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-yellow-400"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">yellow</span> 400
+                            </div>
+                            <div class="text-neutral-800">
+                                #FBE6A2
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">yellow-400</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-yellow-500"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">yellow</span> 500
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">yellow-500</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-yellow-600"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">yellow</span> 600
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">yellow-600</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-yellow-700"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">yellow</span> 700
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">yellow-700</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-yellow-800"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">yellow</span> 800
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">yellow-800</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-yellow-900"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">yellow</span> 900
+                            </div>
+                            <div class="text-neutral-800">
+                                #F7D154
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">yellow-900</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-yellow-1000"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">yellow</span> 1000
+                            </div>
+                            <div class="text-neutral-800">
+                                #7E6514
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">yellow-1000</code>
+                        </div>
+                    </div>
+                                        <!-- -->
+
+                </div>
+                                <div>
+                    <h5 class="font-medium capitalize text-neutral-1000">green</h5>
+                    <hr class="mt-2 border-neutral-200">
+
+                    <!-- -->
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-green-100"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">green</span> 100
+                            </div>
+                            <div class="text-neutral-800">
+                                #F1FAF5
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">green-100</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-green-200"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">green</span> 200
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">green-200</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-green-300"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">green</span> 300
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">green-300</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-green-400"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">green</span> 400
+                            </div>
+                            <div class="text-neutral-800">
+                                #D4EEE2
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">green-400</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-green-500"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">green</span> 500
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">green-500</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-green-600"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">green</span> 600
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">green-600</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-green-700"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">green</span> 700
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">green-700</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-green-800"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">green</span> 800
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">green-800</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-green-900"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">green</span> 900
+                            </div>
+                            <div class="text-neutral-800">
+                                #47B881
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">green-900</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-green-1000"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">green</span> 1000
+                            </div>
+                            <div class="text-neutral-800">
+                                #00783E
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">green-1000</code>
+                        </div>
+                    </div>
+                                        <!-- -->
+
+                </div>
+                                <div>
+                    <h5 class="font-medium capitalize text-neutral-1000">teal</h5>
+                    <hr class="mt-2 border-neutral-200">
+
+                    <!-- -->
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-teal-100"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">teal</span> 100
+                            </div>
+                            <div class="text-neutral-800">
+                                #F1FBFC
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">teal-100</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-teal-200"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">teal</span> 200
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">teal-200</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-teal-300"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">teal</span> 300
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">teal-300</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-teal-400"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">teal</span> 400
+                            </div>
+                            <div class="text-neutral-800">
+                                #D2EEF3
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">teal-400</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-teal-500"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">teal</span> 500
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">teal-500</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-teal-600"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">teal</span> 600
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">teal-600</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-teal-700"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">teal</span> 700
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">teal-700</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-teal-800"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">teal</span> 800
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">teal-800</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-teal-900"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">teal</span> 900
+                            </div>
+                            <div class="text-neutral-800">
+                                #14B5D0
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">teal-900</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-teal-1000"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">teal</span> 1000
+                            </div>
+                            <div class="text-neutral-800">
+                                #007489
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">teal-1000</code>
+                        </div>
+                    </div>
+                                        <!-- -->
+
+                </div>
+                                <div>
+                    <h5 class="font-medium capitalize text-neutral-1000">purple</h5>
+                    <hr class="mt-2 border-neutral-200">
+
+                    <!-- -->
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-purple-100"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">purple</span> 100
+                            </div>
+                            <div class="text-neutral-800">
+                                #F8F7FC
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">purple-100</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-purple-200"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">purple</span> 200
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">purple-200</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-purple-300"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">purple</span> 300
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">purple-300</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-purple-400"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">purple</span> 400
+                            </div>
+                            <div class="text-neutral-800">
+                                #EAE7F8
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">purple-400</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-purple-500"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">purple</span> 500
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">purple-500</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-purple-600"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">purple</span> 600
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">purple-600</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-purple-700"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">purple</span> 700
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">purple-700</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-purple-800"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">purple</span> 800
+                            </div>
+                            <div class="text-neutral-800">
+                                #
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">purple-800</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-purple-900"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">purple</span> 900
+                            </div>
+                            <div class="text-neutral-800">
+                                #735DD0
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">purple-900</code>
+                        </div>
+                    </div>
+                                        <div class="flex items-center py-4 border-b border-neutral-200">
+                        <div class="w-10 h-10 border rounded-sm border-neutral-400 bg-purple-1000"></div>
+                        <div class="ml-4 text-sm">
+                            <div class="font-medium text-neutral-1000">
+                                <span class="capitalize">purple</span> 1000
+                            </div>
+                            <div class="text-neutral-800">
+                                #37248F
+                            </div>
+                        </div>
+                        <div class="ml-auto">
+                            <code class="p-2 font-mono text-sm text-purple-700 whitespace-no-wrap">purple-1000</code>
+                        </div>
+                    </div>
+                                        <!-- -->
+
+                </div>
+                            </div>
+
+        </div>
+    </div>
+    </main>
+</body>
+
+</html> 
